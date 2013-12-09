@@ -8,8 +8,7 @@ Helptags
 
 "Start gvim initial config
 source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
+set nobackup
 
 "set diffexpr=MyDiff()
 "function MyDiff()
