@@ -158,3 +158,5 @@ nmap <C-W>d <Plug>Kwbd
 if has('gui_running')
   set guifont=Consolas:h11
 endif
+
+set nobackup
