@@ -67,7 +67,7 @@ set softtabstop=2
 "End sachet
 
 " Nerdtree
-autocmd VimEnter * NERDTreeFromBookmark SimpleGame
+autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=0
@@ -81,7 +81,7 @@ let NERDTreeKeepTreeInNewTab=1
 " Nerdtree tabs
 let g:nerdtree_tabs_open_on_gui_startup=1
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
-let NERDTreeFromBookmark='SimpleGame'
+cd ~
 
 
 
@@ -154,3 +154,7 @@ set wildchar=<Tab> wildmenu wildmode=full
 
 "Buffer close without closing split
 nmap <C-W>d <Plug>Kwbd
+
+if has('gui_running')
+  set guifont=Consolas:h11
+endif
