@@ -1,6 +1,7 @@
 set nocompatible
 
 "Pathogen, package manager
+call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
 "Generate helptags through vim just in case
@@ -39,9 +40,12 @@ set nobackup
 
 "Start sachet
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
-filetype plugin indent on
  
 syntax on
+syntax enable
+
+filetype plugin indent on
+
 set number
 set mouse=a
 set mousehide
@@ -153,3 +157,8 @@ set wildchar=<Tab> wildmenu wildmode=full
 
 "Buffer close without closing split
 nmap <C-W>d <Plug>Kwbd
+
+set background=dark
+"let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+colorscheme solarized
