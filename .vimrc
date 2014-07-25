@@ -1,67 +1,35 @@
-set nocompatible
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-"Pathogen, package manager
-call pathogen#infect()
-call pathogen#incubate()
-call pathogen#helptags()
-"Generate helptags through vim just in case
-Helptags
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-"Start gvim initial config
-source $VIMRUNTIME/vimrc_example.vim
-set nobackup
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-"set diffexpr=MyDiff()
-"function MyDiff()
-  "let opt = '-a --binary '
-  "if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  "if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  "let arg1 = v:fname_in
-  "if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  "let arg2 = v:fname_new
-  "if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  "let arg3 = v:fname_out
-  "if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  "let eq = ''
-  "if $VIMRUNTIME =~ ' '
-    "if &sh =~ '\<cmd'
-      "let cmd = '""' . $VIMRUNTIME . '\diff"'
-      "let eq = '"'
-    "else
-      "let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    "endif
-  "else
-    "let cmd = $VIMRUNTIME . '\diff'
-  "endif
-  "silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-"endfunction
-""End gvim initial config
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'kien/ctrlp.vim'
+Bundle 'altercation/vim-colors-solarized'
 
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
-"Start sachet
-set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
- 
-syntax on
-syntax enable
-
-filetype plugin indent on
-
-set number
-set mouse=a
-set mousehide
-
-set hlsearch
-set showmatch
-set incsearch
-set nowrap
-set autoindent
-set history=1000
-set cursorline
-if has("unnamedplus")
-  set clipboard=unnamedplus
-elseif has("clipboard")
-  set clipboard=unnamed
-endif
 
 set expandtab
 set shiftwidth=2
@@ -83,35 +51,7 @@ let NERDTreeKeepTreeInNewTab=1
 
 " Nerdtree tabs
 let g:nerdtree_tabs_open_on_gui_startup=1
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
-let NERDTreeFromBookmark='SimpleGame'
-
-
-
-
-" Use neocomplcache.
-"let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-"let g:neocomplcache_enable_smart_case = 1
-" Set minimum syntax keyword length.
-"let g:neocomplcache_min_syntax_length = 3
-
-
-
-
-
-
-
-
-
-
-
-"Gvim Chrome removal
-set guioptions-=m " turn off menu bar
-set guioptions-=T " turn off toolbar
-set guioptions-=L " turn off left scrollbar
-set guioptions-=l
-
+map <leader>n <plug>NERDTreeTabsToggle<CR>
 
 "Window management
 function! WinMove(key) 
@@ -141,11 +81,6 @@ map <leader>L              :wincmd L<cr>
 map <leader>J              :wincmd J<cr>
 
 
-"Set colorscheme
-colorscheme Tomorrow-Night
-
-"Misc. Personal Keybindings
-
 inoremap kj <esc>
 inoremap jk <esc>
 
@@ -158,7 +93,8 @@ set wildchar=<Tab> wildmenu wildmode=full
 "Buffer close without closing split
 nmap <C-W>d <Plug>Kwbd
 
+syntax on
 set background=dark
-"let g:solarized_termcolors=256
-let g:solarized_termtrans=1
+let g:solarized_termtrans = 1
 colorscheme solarized
+
