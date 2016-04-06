@@ -1,4 +1,5 @@
-vimfiles
+Configuration files
 ========
 
-My vimfiles and plugins.
+* .vimrc
+* .tmux.conf
