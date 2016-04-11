@@ -121,6 +121,7 @@ bindkey '^[[B' down-line-or-search
 #bindkey '^[[A' history-beginning-search-backward
 #bindkey '^[[B' history-beginning-search-forward
 bindkey "^R" history-incremental-search-backward
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
