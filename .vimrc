@@ -95,6 +95,9 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
+"powerline
+NeoBundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 call neobundle#end()
 
 " Required:
@@ -106,10 +109,6 @@ filetype plugin on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-"powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
  
 set relativenumber
 syntax on
